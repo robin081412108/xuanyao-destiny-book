@@ -6,7 +6,8 @@
     "dev": "next dev",
     "start": "next start",
     "build": "next build",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "check:copy": "node scripts/check-user-facing-copy.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.0.0",

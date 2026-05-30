@@ -39,5 +39,8 @@ jobs:
       - name: Check BaZi adapter
         run: npm run check:bazi
 
+      - name: Check known BaZi fixtures
+        run: npm run check:bazi-fixtures
+
       - name: Check user-facing copy
         run: npm run check:copy

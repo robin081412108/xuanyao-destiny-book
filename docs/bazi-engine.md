@@ -17,3 +17,18 @@ Models must not directly calculate Four Pillars. Four Pillars data should come f
 ## Future Verification
 
 The real BaZi calculation task should include fixed sample profiles with known expected pillars, day master values, calendar handling, and edge cases before product copy depends on those results.
+
+Real engine output cannot be accepted without verified fixtures. Pending fixtures
+may document useful cases, but they must not be treated as product truth until
+their expected values have been checked against authoritative references.
+
+Month pillar and hour pillar handling are high-risk edge cases. Month pillar
+rules depend on solar-term boundaries, and hour pillar rules depend on time,
+timezone, possible day-boundary handling, and the future true-solar-time policy.
+
+Lunar/solar conversion, timezone, daylight saving time, and optional solar time
+must be explicit adapter inputs or documented defaults. The adapter should not
+silently mix civil time and solar time.
+
+The UI must not claim real calculation until `engine.realCalculation` is `true`
+and verified fixture checks pass in CI.

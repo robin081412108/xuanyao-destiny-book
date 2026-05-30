@@ -24,6 +24,23 @@ npm run build
 Copy `.env.example` to `.env.local` for local development. Never commit real
 secrets.
 
+## Deployment
+
+Preview deployment target: Vercel.
+
+The current build does not require environment variables.
+
+Run local validation:
+
+```bash
+npm run lint
+npm run build
+npm run check:bazi
+npm run check:bazi-fixtures
+npm run check:deploy
+npm run check:copy
+```
+
 ## Scope
 
 Task 001 initializes the project shell, route map, shared UI components,

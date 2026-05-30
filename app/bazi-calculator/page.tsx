@@ -22,7 +22,6 @@ export default async function BaziCalculatorPage({
   const profile = hasQuery
     ? birthProfileFromSearchParams(params)
     : {
-        nickname: "Demo",
         date: "1990-01-01",
         time: "12:30",
         calendar: "solar",
@@ -54,7 +53,7 @@ export default async function BaziCalculatorPage({
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button href="/preview" variant="secondary">
-                Preview My Chart
+                Open Full Preview
               </Button>
               <Button href="/checkout">Unlock Full Book · {productPrice}</Button>
             </div>

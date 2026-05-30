@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
 import { ChartPreviewCard } from "@/components/ChartPreviewCard";
 import { PageShell } from "@/components/PageShell";
 import {
@@ -28,17 +29,37 @@ export default async function PreviewPage({ searchParams }: PreviewPageProps) {
             Your chart preview is ready.
           </h1>
           <p className="mt-4 max-w-3xl leading-8 text-[#d9c798]">
-            The first layers are open. The complete Destiny Book keeps the deeper
-            sections sealed until unlock.
+            The first layers are open. The deeper sections are sealed inside your
+            complete Destiny Book.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button href="/checkout">Unlock Full Book · {productPrice}</Button>
-            <p className="text-sm leading-6 text-[#b9a77d]">
+        </div>
+        <ChartPreviewCard chart={chart} />
+        <Card className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.24em] text-[#c89b3c]">
+              Complete Book
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-[#f0d492]">
+              Unlock the sealed sections.
+            </h2>
+            <p className="mt-4 max-w-3xl leading-7 text-[#d9c798]">
+              Open the full Destiny Book to reveal Wealth Gate, Relationship
+              Pattern, Hidden Friction, Year Ahead, and the complete image-ready
+              archive.
+            </p>
+            <p className="mt-4 text-sm leading-6 text-[#b9a77d]">
               One-time unlock. No subscription. Save your Destiny Book as an image.
             </p>
           </div>
-        </div>
-        <ChartPreviewCard chart={chart} />
+          <div className="grid gap-3">
+            <Button className="w-full" href="/checkout">
+              Unlock Full Book · {productPrice}
+            </Button>
+            <p className="text-center text-xs uppercase tracking-[0.18em] text-[#9f8c61]">
+              Instant digital access after unlock.
+            </p>
+          </div>
+        </Card>
       </section>
     </PageShell>
   );

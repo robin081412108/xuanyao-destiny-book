@@ -1,10 +1,10 @@
 const openModules = ["Origin", "Rhythm"];
 
-const lockedModules = [
-  "Wealth Gate — locked",
-  "Relationship Pattern — locked",
-  "Hidden Friction — locked",
-  "Year Ahead — locked"
+const sealedModules = [
+  "Wealth Gate",
+  "Relationship Pattern",
+  "Hidden Friction",
+  "Year Ahead"
 ];
 
 export function LockedModuleGrid() {
@@ -19,18 +19,24 @@ export function LockedModuleGrid() {
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
         {openModules.map((module) => (
           <div
-            className="border border-[#f0d492]/40 bg-[#c89b3c]/10 p-4 text-sm font-semibold text-[#f0d492]"
+            className="border border-[#f0d492]/40 bg-[#c89b3c]/10 p-4"
             key={module}
           >
-            {module}
+            <p className="text-sm font-semibold text-[#f0d492]">{module}</p>
+            <p className="mt-2 text-xs uppercase tracking-[0.22em] text-[#c89b3c]">
+              Open
+            </p>
           </div>
         ))}
-        {lockedModules.map((module) => (
+        {sealedModules.map((module) => (
           <div
-            className="border border-[#c89b3c]/18 bg-black/20 p-4 text-sm text-[#9f8c61]"
+            className="border border-[#c89b3c]/18 bg-black/20 p-4"
             key={module}
           >
-            {module}
+            <p className="text-sm font-semibold text-[#d9c798]">{module}</p>
+            <p className="mt-2 text-xs uppercase tracking-[0.22em] text-[#9f8c61]">
+              Sealed
+            </p>
           </div>
         ))}
       </div>

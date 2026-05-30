@@ -8,7 +8,8 @@
     "build": "next build",
     "lint": "eslint .",
     "check:copy": "node scripts/check-user-facing-copy.mjs",
-    "check:bazi": "node scripts/check-bazi-adapter.mjs"
+    "check:bazi": "node scripts/check-bazi-adapter.mjs",
+    "check:bazi-fixtures": "node scripts/check-known-bazi-fixtures.mjs"
   },
   "dependencies": {
     "framer-motion": "^12.0.0",

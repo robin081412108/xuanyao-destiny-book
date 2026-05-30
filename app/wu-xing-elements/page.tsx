@@ -1,27 +1,48 @@
+import { BaziInputForm } from "@/components/BaziInputForm";
+import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
+import { FiveElementsBars } from "@/components/FiveElementsBars";
 import { PageShell } from "@/components/PageShell";
+import { buildMockBaziChart } from "@/lib/mock-chart";
+import { productPrice } from "@/lib/site-content";
 
-const elements = ["Wood", "Fire", "Earth", "Metal", "Water"];
+const chart = buildMockBaziChart({
+  nickname: "Demo",
+  date: "1990-01-01",
+  time: "12:30",
+  calendar: "solar",
+  focus: "overall"
+});
 
 export default function WuXingElementsPage() {
   return (
     <PageShell>
-      <section className="py-14">
-        <h1 className="text-4xl font-semibold text-[#f0d492]">Wu Xing Elements</h1>
-        <p className="mt-4 max-w-2xl leading-8 text-[#d9c798]">
-          A premium visual reference for the five-element balance used in the book.
-        </p>
-      </section>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-        {elements.map((element) => (
-          <Card key={element}>
-            <h2 className="text-xl font-semibold text-[#f0d492]">{element}</h2>
-            <p className="mt-3 text-sm leading-6 text-[#b9a77d]">
-              A lens for temperament, pace, and practical focus.
+      <section className="grid gap-8 py-14 lg:grid-cols-[0.82fr_1.18fr]">
+        <div className="grid content-start gap-6">
+          <Card>
+            <p className="text-xs uppercase tracking-[0.28em] text-[#c89b3c]">
+              Wu Xing Elements
             </p>
+            <h1 className="mt-4 text-4xl font-semibold text-[#f0d492]">
+              Wu Xing Elements
+            </h1>
+            <p className="mt-4 leading-8 text-[#d9c798]">
+              Review Wood, Fire, Earth, Metal, and Water as a calm visual summary
+              for self-observation.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Button href="/preview" variant="secondary">
+                Preview My Chart
+              </Button>
+              <Button href="/checkout">Unlock Full Book · {productPrice}</Button>
+            </div>
           </Card>
-        ))}
-      </div>
+          <BaziInputForm submitLabel="Preview My Chart" />
+        </div>
+        <Card>
+          <FiveElementsBars elements={chart.fiveElements} />
+        </Card>
+      </section>
     </PageShell>
   );
 }

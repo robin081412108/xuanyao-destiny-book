@@ -42,5 +42,8 @@ jobs:
       - name: Check known BaZi fixtures
         run: npm run check:bazi-fixtures
 
+      - name: Check deployment readiness
+        run: npm run check:deploy
+
       - name: Check user-facing copy
         run: npm run check:copy

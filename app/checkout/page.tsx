@@ -20,7 +20,9 @@ export default function CheckoutPage() {
               <span>Personal Destiny Book</span>
               <span>{productPrice}</span>
             </div>
-            <Button href="/result/demo-token">Unlock Full Book · {productPrice}</Button>
+            <Button href="/result/archive-token">
+              Unlock Full Book · {productPrice}
+            </Button>
           </div>
         </Card>
       </section>

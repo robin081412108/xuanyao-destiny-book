@@ -1,7 +1,7 @@
-import type { ChartPillar } from "@/lib/mock-chart";
+import type { BaziPillar } from "@/lib/bazi";
 
 type ChartPillarsProps = {
-  pillars: ChartPillar[];
+  pillars: BaziPillar[];
 };
 
 export function ChartPillars({ pillars }: ChartPillarsProps) {

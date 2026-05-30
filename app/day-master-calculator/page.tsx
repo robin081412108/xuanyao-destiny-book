@@ -3,10 +3,10 @@ import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { ChartPillars } from "@/components/ChartPillars";
 import { PageShell } from "@/components/PageShell";
-import { buildMockBaziChart } from "@/lib/mock-chart";
+import { calculateBaziChart } from "@/lib/bazi";
 import { productPrice } from "@/lib/site-content";
 
-const chart = buildMockBaziChart({
+const chart = calculateBaziChart({
   date: "1990-01-01",
   time: "12:30",
   calendar: "solar",

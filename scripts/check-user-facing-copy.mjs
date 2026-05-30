@@ -16,6 +16,10 @@ const textExtensions = new Set([
 
 const prohibitedTerms = [
   { label: "AI", pattern: /\bAI\b/g },
+  { label: "Mock", pattern: /\bMock\b/g },
+  { label: "demo", pattern: /\bdemo\b/gi },
+  { label: "fake", pattern: /\bfake\b/gi },
+  { label: "test", pattern: /\btest\b/gi },
   { label: "psychic", pattern: /psychic/gi },
   { label: "fortune teller", pattern: /fortune teller/gi },
   { label: "guaranteed prediction", pattern: /guaranteed prediction/gi },
@@ -23,6 +27,9 @@ const prohibitedTerms = [
   { label: "curse", pattern: /curse/gi },
   { label: "bad luck removal", pattern: /bad luck removal/gi },
   { label: "change your fate", pattern: /change your fate/gi },
+  { label: "medical advice", pattern: /medical advice/gi },
+  { label: "legal advice", pattern: /legal advice/gi },
+  { label: "investment advice", pattern: /investment advice/gi },
   { label: "bad omen", pattern: /bad omen/gi },
   { label: "disaster warning", pattern: /disaster warning/gi }
 ];

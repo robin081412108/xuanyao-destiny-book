@@ -1,4 +1,4 @@
-import type { FiveElementScore } from "@/lib/mock-chart";
+import type { FiveElementScore } from "@/lib/bazi";
 
 type FiveElementsBarsProps = {
   elements: FiveElementScore[];

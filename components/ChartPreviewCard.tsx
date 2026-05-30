@@ -1,11 +1,11 @@
-import type { MockBaziChart } from "@/lib/mock-chart";
+import type { BaziChart } from "@/lib/bazi";
 import { Card } from "./Card";
 import { ChartPillars } from "./ChartPillars";
 import { FiveElementsBars } from "./FiveElementsBars";
 import { LockedModuleGrid } from "./LockedModuleGrid";
 
 type ChartPreviewCardProps = {
-  chart: MockBaziChart;
+  chart: BaziChart;
   showSections?: boolean;
 };
 

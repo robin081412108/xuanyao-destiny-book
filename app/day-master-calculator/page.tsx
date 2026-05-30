@@ -7,7 +7,6 @@ import { buildMockBaziChart } from "@/lib/mock-chart";
 import { productPrice } from "@/lib/site-content";
 
 const chart = buildMockBaziChart({
-  nickname: "Demo",
   date: "1990-01-01",
   time: "12:30",
   calendar: "solar",

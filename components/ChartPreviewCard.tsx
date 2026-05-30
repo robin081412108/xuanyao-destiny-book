@@ -18,14 +18,14 @@ export function ChartPreviewCard({
       <div className="grid gap-4 sm:grid-cols-[1fr_auto] sm:items-start">
         <div>
           <p className="text-xs uppercase tracking-[0.24em] text-[#c89b3c]">
-            Mock Chart Preview
+            Chart Preview
           </p>
           <h2 className="mt-2 text-3xl font-semibold text-[#f8efd7]">
             {chart.displayName}
           </h2>
           <p className="mt-3 text-sm leading-6 text-[#b9a77d]">
-            A polished cultural reference preview prepared from the submitted
-            birth profile.
+            A polished cultural reference preview prepared from your birth
+            profile.
           </p>
         </div>
         <div className="border border-[#c89b3c]/24 bg-black/20 px-4 py-3">

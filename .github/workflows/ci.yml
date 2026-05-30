@@ -36,5 +36,8 @@ jobs:
       - name: Run build
         run: npm run build
 
+      - name: Check BaZi adapter
+        run: npm run check:bazi
+
       - name: Check user-facing copy
         run: npm run check:copy

@@ -4,9 +4,9 @@ import { ChartPreviewCard } from "@/components/ChartPreviewCard";
 import { PageShell } from "@/components/PageShell";
 import {
   birthProfileFromSearchParams,
-  buildMockBaziChart,
+  calculateBaziChart,
   type SearchParamValue
-} from "@/lib/mock-chart";
+} from "@/lib/bazi";
 import { productPrice } from "@/lib/site-content";
 
 type PreviewPageProps = {
@@ -14,7 +14,7 @@ type PreviewPageProps = {
 };
 
 export default async function PreviewPage({ searchParams }: PreviewPageProps) {
-  const chart = buildMockBaziChart(
+  const chart = calculateBaziChart(
     birthProfileFromSearchParams((await searchParams) ?? {})
   );
 

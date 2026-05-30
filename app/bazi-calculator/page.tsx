@@ -5,9 +5,10 @@ import { Card } from "@/components/Card";
 import { PageShell } from "@/components/PageShell";
 import {
   birthProfileFromSearchParams,
-  buildMockBaziChart,
+  calculateBaziChart,
+  type BirthProfile,
   type SearchParamValue
-} from "@/lib/mock-chart";
+} from "@/lib/bazi";
 import { productPrice } from "@/lib/site-content";
 
 type BaziCalculatorPageProps = {
@@ -19,7 +20,7 @@ export default async function BaziCalculatorPage({
 }: BaziCalculatorPageProps) {
   const params = (await searchParams) ?? {};
   const hasQuery = Object.keys(params).length > 0;
-  const profile = hasQuery
+  const profile: BirthProfile = hasQuery
     ? birthProfileFromSearchParams(params)
     : {
         date: "1990-01-01",
@@ -27,7 +28,7 @@ export default async function BaziCalculatorPage({
         calendar: "solar",
         focus: "overall"
       };
-  const chart = buildMockBaziChart(profile);
+  const chart = calculateBaziChart(profile);
 
   return (
     <PageShell>

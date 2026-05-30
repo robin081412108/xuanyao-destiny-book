@@ -3,14 +3,22 @@ import { Card } from "./Card";
 import { Input } from "./Input";
 import { Select } from "./Select";
 
-export function BaziInputForm() {
+type BaziInputFormProps = {
+  action?: string;
+  submitLabel?: string;
+};
+
+export function BaziInputForm({
+  action = "/preview",
+  submitLabel = "Open My Destiny Book"
+}: BaziInputFormProps) {
   return (
     <Card className="relative w-full overflow-hidden p-0">
       <div
         aria-hidden="true"
         className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#f0d492]/55 to-transparent"
       />
-      <form className="relative grid gap-4 p-5 sm:p-6" action="/preview">
+      <form className="relative grid gap-4 p-5 sm:p-6" action={action} method="get">
         <div>
           <p className="text-xs uppercase tracking-[0.26em] text-[#c89b3c]">
             Archive Access
@@ -65,7 +73,7 @@ export function BaziInputForm() {
           ]}
         />
         <Button className="mt-1 w-full" type="submit">
-          Open My Destiny Book
+          {submitLabel}
         </Button>
       </form>
     </Card>

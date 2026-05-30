@@ -1,39 +1,45 @@
 import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
+import { ChartPreviewCard } from "@/components/ChartPreviewCard";
 import { PageShell } from "@/components/PageShell";
-import { archiveSections, productPrice } from "@/lib/site-content";
+import {
+  birthProfileFromSearchParams,
+  buildMockBaziChart,
+  type SearchParamValue
+} from "@/lib/mock-chart";
+import { productPrice } from "@/lib/site-content";
 
-export default function PreviewPage() {
+type PreviewPageProps = {
+  searchParams?: Promise<Record<string, SearchParamValue>>;
+};
+
+export default async function PreviewPage({ searchParams }: PreviewPageProps) {
+  const chart = buildMockBaziChart(
+    birthProfileFromSearchParams((await searchParams) ?? {})
+  );
+
   return (
     <PageShell>
-      <section className="grid gap-8 py-14 lg:grid-cols-[1fr_0.75fr]">
-        <div>
-          <h1 className="text-4xl font-semibold text-[#f0d492]">Destiny Book Preview</h1>
-          <p className="mt-4 max-w-2xl leading-8 text-[#d9c798]">
-            Your sample archive is ready. Unlock the full book to save the complete
-            image-ready version.
+      <section className="grid gap-8 py-14">
+        <div className="max-w-4xl">
+          <p className="text-xs uppercase tracking-[0.28em] text-[#c89b3c]">
+            Destiny Book Preview
           </p>
-          <div className="mt-8">
+          <h1 className="mt-4 text-4xl font-semibold text-[#f0d492]">
+            Your chart preview is ready.
+          </h1>
+          <p className="mt-4 max-w-3xl leading-8 text-[#d9c798]">
+            The first layers are open. The complete Destiny Book keeps the deeper
+            sections sealed until unlock.
+          </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Button href="/checkout">Unlock Full Book · {productPrice}</Button>
+            <p className="text-sm leading-6 text-[#b9a77d]">
+              One-time unlock. No subscription. Save your Destiny Book as an image.
+            </p>
           </div>
         </div>
-        <Card>
-          <h2 className="text-2xl font-semibold text-[#f0d492]">Preview summary</h2>
-          <p className="mt-4 leading-7 text-[#b9a77d]">
-            A balanced profile with strong planning rhythm and a steady wealth-habit theme.
-          </p>
-        </Card>
+        <ChartPreviewCard chart={chart} />
       </section>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {archiveSections.map((section) => (
-          <Card key={section}>
-            <h2 className="text-lg font-semibold text-[#f0d492]">{section}</h2>
-            <p className="mt-3 text-sm leading-6 text-[#b9a77d]">
-              Locked in the full archive.
-            </p>
-          </Card>
-        ))}
-      </div>
     </PageShell>
   );
 }

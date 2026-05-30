@@ -5,37 +5,68 @@ import { Select } from "./Select";
 
 export function BaziInputForm() {
   return (
-    <Card className="w-full">
-      <form className="grid gap-4" action="/preview">
+    <Card className="relative w-full overflow-hidden p-0">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#f0d492]/55 to-transparent"
+      />
+      <form className="relative grid gap-4 p-5 sm:p-6" action="/preview">
         <div>
-          <h2 className="text-xl font-semibold text-[#f0d492]">Birth Moment</h2>
+          <p className="text-xs uppercase tracking-[0.26em] text-[#c89b3c]">
+            Archive Access
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold text-[#f0d492]">
+            Open your birth record
+          </h2>
           <p className="mt-2 text-sm leading-6 text-[#b9a77d]">
-            Enter the details used to prepare a structured Four Pillars archive.
+            Start with a refined profile card. The preview uses these details only
+            to shape a cultural reference archive.
           </p>
         </div>
+        <Input label="Nickname (optional)" name="nickname" placeholder="How should the book address you?" />
+        <Select
+          label="Gender (optional)"
+          name="gender"
+          options={[
+            { label: "Prefer not to say", value: "prefer-not-to-say" },
+            { label: "Female", value: "female" },
+            { label: "Male", value: "male" },
+            { label: "Other", value: "other" }
+          ]}
+        />
         <Input label="Birth date" name="date" type="date" required />
         <div className="grid gap-4 sm:grid-cols-2">
-          <Input label="Birth time" name="time" type="time" />
+          <Input label="Birth time (optional)" name="time" type="time" />
           <Select
             label="Calendar"
             name="calendar"
+            required
             options={[
               { label: "Solar", value: "solar" },
               { label: "Lunar", value: "lunar" }
             ]}
           />
         </div>
+        <Input
+          label="Birth location (optional)"
+          name="location"
+          placeholder="City or region"
+        />
         <Select
           label="Focus"
           name="focus"
+          required
           options={[
-            { label: "Life Pattern", value: "life-pattern" },
-            { label: "Career Path", value: "career-path" },
-            { label: "Wealth Habits", value: "wealth-habits" },
-            { label: "Yearly Rhythm", value: "yearly-rhythm" }
+            { label: "Overall", value: "overall" },
+            { label: "Career", value: "career" },
+            { label: "Wealth", value: "wealth" },
+            { label: "Relationship", value: "relationship" },
+            { label: "Year Ahead", value: "year-ahead" }
           ]}
         />
-        <Button type="submit">Open My Destiny Book</Button>
+        <Button className="mt-1 w-full" type="submit">
+          Open My Destiny Book
+        </Button>
       </form>
     </Card>
   );

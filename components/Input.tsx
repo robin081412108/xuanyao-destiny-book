@@ -13,7 +13,7 @@ export function Input({ label, id, ...props }: InputProps) {
       <input
         {...props}
         id={inputId}
-        className="min-h-12 border border-[#c89b3c]/30 bg-[#090806] px-4 text-[#f5ebd2] outline-none transition placeholder:text-[#786846] focus:border-[#f0d492]"
+        className="min-h-12 w-full border border-[#c89b3c]/30 bg-[#090806]/92 px-4 text-[#f5ebd2] outline-none transition placeholder:text-[#786846] focus:border-[#f0d492] focus:ring-1 focus:ring-[#f0d492]/35"
       />
     </label>
   );
